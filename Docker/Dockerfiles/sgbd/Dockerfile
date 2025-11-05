@@ -1,5 +1,7 @@
 FROM ubuntu
 ARG USUARIO
+
+ENV USER = ${USUARIO}
 RUN apt update && apt install -yq --no-install-recommends \ 
     nano \
     git curl wget \
