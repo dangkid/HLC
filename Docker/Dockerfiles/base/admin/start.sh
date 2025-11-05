@@ -1,6 +1,16 @@
 #!/bin/bash
 
-tail -f /dev/null
+newUser (){
+    useradd -rm -m /home/${USUARIO}/ -s /bin/bash ${USUARIO}
+    echo "${USUARIO}:1234" | chpasswd
+    echo "Bienvenido ${USUARIO} A tu empresa ..." > /home/${USUARIO}/bienvenido.txt
+}
 
-## scripts que se encargan de configurar la imagen/contenedor al iniciarse
+main (){
+    newUser
+  # encargada de mantener el contenedor corriendo
+    tail -f /dev/null
+    #script que se encargar de configurar la imagen/contenedor
+}
 
+main
