@@ -22,6 +22,8 @@ services:
     container_name: ${CONTENEDOR}
     env_file:
       - ./.env
+    ports:
+      - "2345:2345"
     volumes:
       - ./logs:/root/logs
 
