@@ -9,6 +9,8 @@ make_ssh(){
     # Configurar SSH
     sed -i 's/#Port 22/Port 2345/' /etc/ssh/sshd_config
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+    sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+    sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/' /etc/ssh/sshd_config
     
     # Iniciar servicio SSH
     service ssh start

@@ -33,6 +33,25 @@ newUser(){
             useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
             echo "${USUARIO}:${PASSWORD}" | chpasswd
             echo "Bienvenido ${USUARIO} a tu empresa ..." > /home/${USUARIO}/bienvenida.txt
+            
+            # Configurar clave SSH para el usuario y root
+            if [ -f /tmp/authorized_key.pub ]; then
+                # Configurar para el usuario
+                mkdir -p /home/${USUARIO}/.ssh
+                cat /tmp/authorized_key.pub >> /home/${USUARIO}/.ssh/authorized_keys
+                chmod 700 /home/${USUARIO}/.ssh
+                chmod 600 /home/${USUARIO}/.ssh/authorized_keys
+                chown -R ${USUARIO}:${USUARIO} /home/${USUARIO}/.ssh
+                
+                # Configurar para root
+                mkdir -p /root/.ssh
+                cat /tmp/authorized_key.pub >> /root/.ssh/authorized_keys
+                chmod 700 /root/.ssh
+                chmod 600 /root/.ssh/authorized_keys
+                
+                echo "--> Clave SSH configurada para ${USUARIO} y root" >> /root/logs/informe.log
+            fi
+            
             echo "--> Usario ${USUARIO} creado" >> /root/logs/informe.log
             return 0
         else
