@@ -27,14 +27,13 @@ services:
     volumes:
       - ./logs:/root/logs
     networks:
-     netcaronte:
-       ipv4_address: ${IP}
-      
+      netcaronte:
+        ipv4_address: ${IP}
 
 networks:
-netcaronte:
-  ipam:
-    driver: default
-    config:
-      - subnet: ${SUBNET}
+  netcaronte:
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
 
