@@ -20,9 +20,8 @@ main() {
         make_ssh
     fi
 
-    # encargada de dejar este contendor vivo en BGround
-    tail -f /dev/null
-    ## script's que se encargar de configurar el imagen/contenedor
+    # Ejecutar SSH en primer plano - esto mantiene el contenedor vivo
+    exec /usr/sbin/sshd -D
 }
 
 main
