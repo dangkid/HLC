@@ -18,10 +18,12 @@ main() {
     if [ "$?" -eq 0 ]
     then
         make_ssh
+        # Ejecutar SSH en primer plano - esto mantiene el contenedor vivo
+        exec /usr/sbin/sshd -D
+    else
+        echo "Error al crear usuario" >> /root/logs/informe.log
+        exit 1
     fi
-
-    # Ejecutar SSH en primer plano - esto mantiene el contenedor vivo
-    exec /usr/sbin/sshd -D
 }
 
 main

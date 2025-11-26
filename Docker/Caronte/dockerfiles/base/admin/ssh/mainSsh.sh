@@ -24,4 +24,7 @@ make_ssh(){
     
     config_sudoers
     config_ssh
+    
+    # Generar las claves del host si no existen
+    ssh-keygen -A
 }
