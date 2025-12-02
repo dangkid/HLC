@@ -4,7 +4,7 @@ services:
     build: 
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
-      image: olivermagallanes/nginx
+    image: olivermagallanes/nginx
     container_name: ${CONTENEDOR}
     hostname: ${HOSTNAME}
     env_file:
