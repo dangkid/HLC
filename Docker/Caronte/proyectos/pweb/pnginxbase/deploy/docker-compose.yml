@@ -1,6 +1,6 @@
+version: '3.8'
 services:
-
-servidor:
+ servidor:
     build: 
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
