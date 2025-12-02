@@ -18,8 +18,8 @@ services:
       netcarontewebnginx:
         ipv4_address: ${IP}
 
-networks:
-  netcarontewebnginx:
+ networks:
+ netcarontewebnginx:
     ipam:
       driver: default
       config:
