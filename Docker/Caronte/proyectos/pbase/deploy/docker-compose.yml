@@ -18,6 +18,7 @@ services:
     build: 
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/base/ubbase
+      imagen: dangelomagallanes/ubbase
     container_name: ${CONTENEDOR}
     env_file:
       - ./.env

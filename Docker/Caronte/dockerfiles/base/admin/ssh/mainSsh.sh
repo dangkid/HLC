@@ -1,3 +1,4 @@
+
 #!/bin/bash
 set -e
 
@@ -7,8 +8,10 @@ config_ssh(){
     if [ ! -d /home/${USUARIO}/.ssh ]
     then
         mkdir /home/${USUARIO}/.ssh
-        cat /home/${USUARIO}/devops/HLC/Docker/Caronte/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
+        cat /home/${USUARIO}/Devops/HLC/Docker/Caronte/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
     fi
+    # /etc/init.d/ssh start &
+    exec /usr/sbin/sshd  # dejar el ssh en background (2plano)
 }
 
 config_sudoers(){
@@ -19,12 +22,9 @@ config_sudoers(){
     fi
 }
 
-make_ssh(){
+newSSH(){
     #gestion de errores y salida a logs
     
     config_sudoers
     config_ssh
-    
-    # Generar las claves del host si no existen
-    ssh-keygen -A
 }
