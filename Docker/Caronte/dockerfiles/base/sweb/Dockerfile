@@ -19,4 +19,4 @@ COPY ./dockerfiles/base/sweb/nginx /root/admin/sweb/nginx
 RUN chmod +x /root/admin/sweb/nginx/admin/start.sh
 RUN mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
 WORKDIR /root/admin/sweb/nginx 
-ENTRYPOINT [ "start.sh" ]
+ENTRYPOINT [ "./admin/start.sh" ]
