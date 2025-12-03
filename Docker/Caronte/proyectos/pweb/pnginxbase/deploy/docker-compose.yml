@@ -1,9 +1,8 @@
-version: '3.8'
 services:
  servidor:
     build: 
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/sweb/Dockerfile
+      dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
     image: olivermagallanes/nginx
     container_name: ${CONTENEDOR}
     hostname: ${HOSTNAME}
