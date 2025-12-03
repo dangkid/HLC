@@ -2,8 +2,8 @@ FROM olivermagallanes/nginx
 
 USER root
 
-# Copiar archivos del sitio web
-COPY ./proyectos/oliverproject/src /var/www/html
+# Copiar archivos del sitio web desde la carpeta src relativa al deploy
+COPY ../src /var/www/html
 
 # Asegurar permisos correctos
 RUN chown -R www-data:www-data /var/www/html

@@ -1,8 +1,8 @@
 services:
   servidor:
     build: 
-      context: ${CONTEXTO}
-      dockerfile: ./proyectos/oliverproject/deploy/Dockerfile
+      context: ..
+      dockerfile: ./deploy/Dockerfile
     image: olivermagallanes/proyectodange
     container_name: ${CONTENEDOR}
     hostname: ${HOSTNAME}
