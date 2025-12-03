@@ -1,0 +1,24 @@
+services:
+  servidor:
+    build: 
+      context: ${CONTEXTO}
+      dockerfile: ./proyectos/oliverproject/deploy/Dockerfile
+    image: olivermagallanes/proyectodange
+    container_name: ${CONTENEDOR}
+    hostname: ${HOSTNAME}
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/root/logs
+    ports:
+      - "${PORT_WEB}:80"
+    networks:
+      netcaronteoliverproject:
+        ipv4_address: ${IP}
+
+networks:
+  netcaronteoliverproject:
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
