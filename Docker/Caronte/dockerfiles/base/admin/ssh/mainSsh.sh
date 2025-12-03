@@ -11,7 +11,7 @@ config_ssh(){
         cat /home/${USUARIO}/Devops/HLC/Docker/Caronte/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
     fi
     # /etc/init.d/ssh start &
-    exec /usr/sbin/sshd  # dejar el ssh en background (2plano)
+    /usr/sbin/sshd  # dejar el ssh en background (2plano)
 }
 
 config_sudoers(){
