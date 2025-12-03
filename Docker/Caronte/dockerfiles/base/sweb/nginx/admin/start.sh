@@ -1,3 +1,5 @@
+#!/bin/bash
+
 config_nginx(){
 #inicia nginx en segundo plano
 #para lanzar nginx en segundo plano y mantener el ocntenedor activo, n
