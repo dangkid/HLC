@@ -8,7 +8,10 @@ config_ssh(){
     if [ ! -d /home/${USUARIO}/.ssh ]
     then
         mkdir /home/${USUARIO}/.ssh
-        cat /home/${USUARIO}/Devops/HLC/Docker/Caronte/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
+        cat /root/admin/base/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
+        chmod 700 /home/${USUARIO}/.ssh
+        chmod 600 /home/${USUARIO}/.ssh/authorized_keys
+        chown -R ${USUARIO}:${USUARIO} /home/${USUARIO}/.ssh
     fi
     # /etc/init.d/ssh start &
     /usr/sbin/sshd  # dejar el ssh en background (2plano)
