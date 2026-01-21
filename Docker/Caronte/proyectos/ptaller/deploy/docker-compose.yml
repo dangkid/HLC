@@ -1,12 +1,8 @@
 services:
-
- webtaller:
-   build:
-      context: ./deploy
-      dockerfile: ./deploy/Dockerfile
-      image: webtaller:1.0
-      ports:
-        - "8080:80"
-        
-
-    
+  webtaller:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: dangelomagallanes/webtaller:latest
+    ports:
+      - "8080:80"
