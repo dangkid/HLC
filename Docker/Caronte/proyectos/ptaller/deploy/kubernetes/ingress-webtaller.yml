@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment 
 metadata:
   name: webtaller-deployment
   namespace: proyectotaller
@@ -18,4 +18,3 @@ spec:
         image: dangekid/webtaller:latest
         ports:
         - containerPort: 80
----
