@@ -12,4 +12,4 @@ app:
     port: 80
     nodePort: 30080
   ingress:
-    host: webtaller.dangelomagallanes.es
+    host: webtaller.dangelomagallanes.me
