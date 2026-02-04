@@ -3,10 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microk8s</title>
+    <title>CyberSec Hub - Centro de Seguridad Informática</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Microk8s</h1>
-    <p>Prueba de Microk8s</p>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🛡️ CyberSec Hub</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#amenazas">Amenazas</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Protege tu Infraestructura Digital</h1>
+            <p>Soluciones avanzadas de ciberseguridad para empresas modernas</p>
+            <button class="btn btn-primary" onclick="scrollToSection('soluciones')">Explorar Soluciones</button>
+        </div>
+    </header>
+
+    <section id="amenazas" class="threats">
+        <div class="container">
+            <h2>Amenazas Actuales</h2>
+            <div class="threat-grid">
+                <div class="threat-card">
+                    <div class="threat-icon">🔓</div>
+                    <h3>Ataques de Fuerza Bruta</h3>
+                    <p>Intentos automatizados para adivinar credenciales y acceder a sistemas.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">🦠</div>
+                    <h3>Malware y Ransomware</h3>
+                    <p>Software malicioso que cifra datos y exige rescate para su liberación.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">🎣</div>
+                    <h3>Phishing y Ingeniería Social</h3>
+                    <p>Técnicas de manipulación para obtener información sensible de usuarios.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">⚡</div>
+                    <h3>DDoS y Ataques de Red</h3>
+                    <p>Sobrecarga de servidores para causar indisponibilidad de servicios.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">🕵️</div>
+                    <h3>Exfiltración de Datos</h3>
+                    <p>Robo no autorizado de información confidencial y sensible.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">🔐</div>
+                    <h3>Vulnerabilidades Zero-Day</h3>
+                    <p>Exploits desconocidos sin parche disponible aún.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="soluciones" class="solutions">
+        <div class="container">
+            <h2>Nuestras Soluciones</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>🔍 Monitoreo 24/7</h3>
+                    <p>Vigilancia continua de tu infraestructura con alertas en tiempo real para detectar anomalías.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🛡️ Firewall Avanzado</h3>
+                    <p>Protección de perímetro con análisis profundo de tráfico y control granular de acceso.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🔑 Gestión de Identidades</h3>
+                    <p>Autenticación multifactor y control de acceso basado en roles (RBAC).</p>
+                </div>
+                <div class="solution-card">
+                    <h3>📊 Análisis de Amenazas</h3>
+                    <p>Inteligencia de amenazas con análisis forense y reportes detallados.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🔐 Encriptación End-to-End</h3>
+                    <p>Protección de datos en tránsito y en reposo con estándares internacionales.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>📋 Compliance & Auditoría</h3>
+                    <p>Cumplimiento de normas GDPR, ISO 27001 y otras regulaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stat">
+                <h3 class="stat-number" data-count="99">0</h3>
+                <p>% Disponibilidad</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat-number" data-count="50">0</h3>
+                <p>+ Clientes Protegidos</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat-number" data-count="1000">0</h3>
+                <p>+ Amenazas Bloqueadas</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat-number" data-count="24">0</h3>
+                <p>h Respuesta Máxima</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacta con Nosotros</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email" required>
+                <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+            <div id="form-message" style="display:none; margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CyberSec Hub - Protegiendo la infraestructura digital de empresas.</p>
+            <p>Desarrollado por Dangelo Magallanes | Desplegado en Kubernetes</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
