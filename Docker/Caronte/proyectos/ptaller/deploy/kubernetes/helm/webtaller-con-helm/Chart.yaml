@@ -1,4 +1,4 @@
-apiVersion: v2
+dig webtaller.dangelomagallanes.me @8.8.8.8apiVersion: v2
 name: webtaller-con-helm
 description: A Helm chart for webtaller Kubernetes deployment
 
