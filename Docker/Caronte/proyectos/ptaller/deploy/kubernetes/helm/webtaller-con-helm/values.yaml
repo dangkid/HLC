@@ -1,0 +1,15 @@
+app:
+  name: webtaller
+  image: 
+    repository: dangekid/webtaller
+    tag: latest
+    pullPolicy: Always
+  container:
+    name: webtaller
+    port: 80
+    replicaCount: 3
+  service:
+    port: 80
+    nodePort: 30080
+  ingress:
+    host: webtaller.dangelomagallanes.es
