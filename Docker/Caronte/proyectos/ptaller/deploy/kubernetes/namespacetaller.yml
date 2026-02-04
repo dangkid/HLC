@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: proyectotaller
   labels:
-    name: proyectotaller
+    name: proyectoltaller

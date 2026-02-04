@@ -1,20 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: webtaller-deployment
+  name: webtaller-ingress
   namespace: proyectotaller
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: webtaller
-  template:
-    metadata:
-      labels:
-        app: webtaller
-    spec:
-      containers:
-      - name: webtaller
-        image: dangekid/webtaller:latest
-        ports:
-        - containerPort: 80
+  rules:
+    - host: webtaller.dangelomagallanes.es
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webtaller-service
+                port:
+                  number: 80
