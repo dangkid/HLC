@@ -2,7 +2,6 @@ controller:
   image:
     repository: jenkins/jenkins
     tag: "2.401.3-jdk17"
-  runAsUser: 1000
   admin:
     username: admin
     password: admin123
@@ -10,9 +9,6 @@ controller:
     enabled: true
     size: 8Gi
     storageClassName: "microk8s-hostpath"
-  sidecars:
-    configAutoReload:
-      enabled: false
   ingress:
     enabled: true
     ingressClassName: public
