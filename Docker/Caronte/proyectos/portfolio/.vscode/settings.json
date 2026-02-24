@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python3 << 'PYEOF'\nfrom pypdf import PdfReader\nreader = PdfReader\\('/Users/dangelomagallanes/Desktop/oliver-personal-web/public/cv-oliver-magallanes\\.pdf'\\)\nprint\\(f\"Pages: \\{len\\(reader\\.pages\\)\\}\"\\)\n# Try raw extraction\nfor i, page in enumerate\\(reader\\.pages\\):\n    try:\n        text = page\\.extract_text\\(extraction_mode=\"plain\"\\)\n        if text and text\\.strip\\(\\):\n            print\\(f\"=== PAGE \\{i\\+1\\} ===\"\\)\n            print\\(text\\[:2000\\]\\)\n    except:\n        # Fallback: try to get raw content\n        try:\n            content = page\\.get\\(\"/Contents\"\\)\n            print\\(f\"Page \\{i\\+1\\}: has content object but extraction failed\"\\)\n        except:\n            print\\(f\"Page \\{i\\+1\\}: error\"\\)\nPYEOF$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
