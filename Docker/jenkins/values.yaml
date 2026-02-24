@@ -1,0 +1,30 @@
+controller:
+  image:
+    repository: jenkins/jenkins
+    tag: "2.401.3-jdk17"
+  runAsUser: 1000
+  admin:
+    username: admin
+    password: admin123
+  persistence:
+    enabled: true
+    size: 8Gi
+    storageClassName: microk8s-hostpath
+    serviceType: ClusterIP
+  sidecars:
+    configAutoReload:
+      enabled: true
+    image:
+      repository: kiwigrid/k8s-sidecar
+      tag: "1.27.4"
+  ingress:
+    enabled: true
+    ingressClassName: public
+    hostName: jenkins.dangelomagallanes.me
+  additionalPlugins: []
+  installPlugins:
+    - configuration-as-code
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - docker-workflow
