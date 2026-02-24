@@ -9,22 +9,17 @@ controller:
   persistence:
     enabled: true
     size: 8Gi
-    storageClassName: microk8s-hostpath
-    serviceType: ClusterIP
+    storageClassName: "microk8s-hostpath"
   sidecars:
     configAutoReload:
-      enabled: true
-    image:
-      repository: kiwigrid/k8s-sidecar
-      tag: "1.27.4"
+      enabled: false
   ingress:
     enabled: true
     ingressClassName: public
     hostName: jenkins.dangelomagallanes.me
-  additionalPlugins: []
   installPlugins:
-    - configuration-as-code
-    - kubernetes
-    - workflow-aggregator
-    - git
-    - docker-workflow
+    - kubernetes:latest
+    - workflow-aggregator:latest
+    - git:latest
+    - docker-workflow:latest
+
